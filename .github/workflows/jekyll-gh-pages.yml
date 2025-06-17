@@ -42,7 +42,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install mkdocs
-          pip install pymdown-extensions  # Necessário para a extensão 'pymdownx.tasklist'
+          # Adicionada a instalação do tema MkDocs Material
+          pip install mkdocs-material 
+          # Necessário para as extensões como 'pymdownx.tasklist', 'admonition', 'pymdownx.details', 'pymdownx.superfences', 'pymdownx.tabbed'
+          pip install pymdown-extensions 
 
       # 4. Construir o site
       - name: Build site
