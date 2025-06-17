@@ -5,7 +5,7 @@ name: Deploy VerificAAA Docs to GitHub Pages
 on:
   push:
     branches:
-      - main  # Mude para 'master' se for o nome da sua branch principal
+      - main
 
   # Permite que você execute este workflow manualmente na aba "Actions"
   workflow_dispatch:
@@ -21,37 +21,34 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-# Jobs (Tarefas) a serem executadas
 jobs:
-  # A tarefa de deploy tem todos os passos necessários
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest # Usar a versão mais recente do Ubuntu
+    runs-on: ubuntu-latest
     steps:
       # 1. Baixar o código do seu repositório
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Configurar o ambiente Python (necessário para o MkDocs)
+      # 2. Configurar o ambiente Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
-      # 3. Instalar as dependências do MkDocs
+      # 3. Instalar as dependências necessárias para o VerificAAA
       - name: Install dependencies
         run: |
           pip install mkdocs
-          # Se usar algum tema ou plugin, adicione aqui. Ex:
-          # pip install mkdocs-material
+          pip install pymdown-extensions  # Necessário para a extensão 'pymdownx.tasklist'
 
-      # 4. Construir o site (converte .md para .html na pasta 'site')
+      # 4. Construir o site
       - name: Build site
         run: mkdocs build
 
-      # 5. Fazer o upload do artefato (a pasta 'site') para o GitHub Pages
+      # 5. Fazer o upload do artefato para o GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
