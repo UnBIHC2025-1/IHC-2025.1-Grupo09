@@ -25,17 +25,27 @@ nav:
     - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
 
 theme:
-  name: readthedocs
+  name: material # Alterado de readthedocs para material
   locale: pt_BR
-  titles_only: true
-  logo: imagens/logo-verificaaa.png
-  favicon: imagens/logo-verificaaa.png
+  logo: imagens/logo-verificaaa.png # Verifique o caminho correto da sua imagem
+  favicon: imagens/logo-verificaaa.png # Verifique o caminho correto da sua imagem
+  features: # Adicione recursos do tema Material para uma melhor experiência
+    - navigation.tabs
+    - navigation.sections
+    - search.highlight
+    - search.share
+    - toc.integrate
 
 markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: false
       clickable_checkbox: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_css:
   - stylesheets/extra.css
