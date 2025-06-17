@@ -1,55 +1,58 @@
-# Design
+# Design 
 
 "Existe uma lenda de que a acessibilidade torna um sítio web muito simples ou feio. Não é verdade: um sítio web bem estruturado pode ser bonito e criativo. É possível, inclusive, criar apresentações visuais diferentes para a mesma estrutura HTML de um sítio web com o uso de CSS e atender a diferentes necessidades". Dessa forma, nessa seção encontra-se checklist que garantam a acessibilidade no design.
 
-## Aparência
-- [ ] <b> Adicionar instrução</b> que não <b>dependa exclusivamente da cor</b>. <a id="TEC1" href="#RP1">[1]</a>
-- [ ] <b> Adicionar informação</b> (como gráficos e diagramas) que não <b>dependa exclusivamente da cor</b>. <a id="TEC1" href="#RP1">[1]</a>
-- [ ] <b> Tamanho do texto ajustável</b> para permitir ampliação. <a id="TEC2" href="#RP2">[2]</a>
-- [ ] <b> Descrever os controles</b> pelo nome, não apenas pela aparência ou localização. <a id="TEC3"href="#RP3">[3]</a>
-- [ ] <b> Garantir que dicas visuais</b> significativas atinjam 3:1 em relação ao fundo. <a id="TEC4" href="#RP4">[4]</a>
-- [ ] <b> Fazer com que as linhas</b> de texto se ajustem ao viewport. <a id="TEC5"href="#RP5">[5]</a>
-- [ ] Oferece uma <b> opção de alto contraste </b> (dark-mode) de suas páginas web e aumento de fontes.
-- [ ] Parágrafos com no <b> máximo 80 caracteres por linha </b>.
-- [ ] <b> Evita </b> o uso de <b> textos longos em caixa alta ou condensados </b>.
-- [ ] Evita o alinhamento justificado.
-- [ ] <b> Fontes são fluidas </b> e de fácil entendimento.
-- [ ] Toma o devido cuidado com <b>``` display:none ``` e ``` visibility:hidden ``` para os recursos de tecnologia assistiva</b>
-- [ ] Preferir <b> botões com texto e ícone </b>. E botões apenas com ícones tem o nome acessível.
+#### 1. Layout, Tipografia e Espaçamento
 
-## Animação
-- [ ] <b> Evitar conteúdo que pisque</b>, ou mantenha-o abaixo dos limites. <a id="TEC6" href="#RP6">[6]</a>
-- [ ] <b> Permitir que os usuários controlem as alterações de conteúdo</b> que ocorrem em paralelo com outro conteúdo. <a id="TEC7" href="#RP7">[7]</a>
-- [ ] <b> Toda a animação</b> deve obedecer à ```prefers-reduced-motion``` consulta de mídia. <a id="TEC8" href="#RP8">[8]</a>
+- [ ] **O layout se adapta a diferentes tamanhos de tela (responsividade) sem perda de conteúdo ou funcionalidade.** (Referência: NBR 17225 - Diretriz 1.4.10: Refluxo)
+- [ ] **O texto pode ser ampliado em até 200% pelo usuário sem quebrar o layout.** (Referência: NBR 17225 - Diretriz 1.4.4: Redimensionamento de Texto)
+- [ ] **O espaçamento entre linhas, parágrafos, palavras e letras pode ser ajustado pelo usuário sem perda de funcionalidade.** (Referência: NBR 17225 - Diretriz 1.4.12: Espaçamento de Texto)
+- [ ] **As fontes utilizadas são legíveis e sem serifa para blocos longos de texto.** (Referência: NBR 17225 - Princípio 3: Compreensível)
+- [ ] **Parágrafos têm uma largura de linha que facilita a leitura (recomendação de até 80 caracteres).** (Referência: NBR 17225 - Diretriz 3.1: Legível)
+- [ ] **Evitar o uso de texto justificado, pois cria espaçamentos irregulares que dificultam a leitura.** (Referência: NBR 17225 - Diretriz 3.1: Legível)
+    - > **Certo:** Texto alinhado à esquerda.
+    - > **Errado:** Texto com alinhamento justificado, que pode criar "rios" de espaços em branco entre as palavras.
+- [ ] **Evitar o uso de textos longos em caixa alta (maiúsculas) ou com fontes muito condensadas.** (Referência: NBR 17225 - Diretriz 3.1: Legível)
 
-## Contraste de Cores
-- [ ] <b> Verificar o contraste</b> de  todo texto tamanho normal. <a id="TEC9" href="#RP9">[9]</a>
-- [ ] <b> Verificar o contraste</b> de todo texto tamanho grande. <a id="TEC9" href="#RP9">[9]</a>
-- [ ] <b> Verificar o contraste</b> de todos os ícones. <a id="TEC4" href="#RP4">[4]</a>
-- [ ] <b> Verificar o contraste</b> das bordas dos elementos de entrada (entrada de texto, botões de opção, caixas de seleção, etc.). <a id="#RP4" href="#RP4">[4]</a>
-- [ ] <b> Verificar o texto</b> que se sobrepõe a imagens ou vídeos. <a id="TEC9" href="#RP9">[9]</a>
-- [ ] <b> Verificar ```::selection``` cores</b> personalizadas. <a id="TEC9" href="#RP9">[9]</a>
+#### 2. Uso da Cor e Contraste
 
-## Referências Bibliograficas
+- [ ] **A cor não é o único meio utilizado para transmitir informação ou distinguir elementos.** (Referência: NBR 17225 - Diretriz 1.4.1: Uso de Cor)
+    - > **Certo:** Um campo de formulário com erro é indicado por uma borda vermelha, um ícone de alerta e uma mensagem de texto.
+    - > **Errado:** Um campo de formulário com erro é indicado apenas por uma borda vermelha.
+- [ ] **O contraste entre o texto e o fundo é de, no mínimo, 4.5:1 para textos normais.** (Referência: NBR 17225 - Diretriz 1.4.3: Contraste Mínimo)
+- [ ] **O contraste entre o texto e o fundo é de, no mínimo, 3:1 para textos grandes (18pt ou 14pt em negrito).** (Referência: NBR 17225 - Diretriz 1.4.3: Contraste Mínimo)
+- [ ] **O contraste de componentes de interface (ícones, bordas de inputs) é de, no mínimo, 3:1 em relação ao fundo.** (Referência: NBR 17225 - Diretriz 1.4.11: Contraste de Componentes não textuais)
+    - > **Certo:** Um ícone de busca cinza escuro (`#555555`) sobre um fundo branco (`#FFFFFF`).
+    - > **Errado:** Um ícone de busca cinza claro (`#CCCCCC`) sobre um fundo branco (`#FFFFFF`).
+- [ ] **O texto sobreposto a imagens ou vídeos possui contraste suficiente ou um fundo sólido para garantir a leitura.** (Referência: NBR 17225 - Diretriz 1.4.3: Contraste Mínimo)
+- [ ] **Uma opção de alto contraste (como um "modo escuro" bem implementado) é oferecida.** (Referência: NBR 17225 - Diretriz 1.4: Distinguível)
 
-> <a id="RP1" href="#TEC1">1.</a> WCAG 2.2 Understanding Docs. SC 1.4.1 Use of Color (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html). Acesso em: 9 Mai. 2024.
+#### 3. Interação, Foco e Alvos
 
-> <a id="RP2" href="#TEC2">2.</a> WCAG 2.2 Understanding Docs. SC 1.4.4 Resize Text (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html). Acesso em: 9 Mai. 2024.
+- [ ] **Todos os elementos interativos possuem um indicador de foco de teclado visível e com bom contraste.** (Referência: NBR 17225 - Diretriz 2.4.7: Foco Visível)
+    - > **Certo:** Estilizar o estado `:focus` com uma borda colorida e grossa (ex: `outline: 2px solid blue;`).
+    - > **Errado:** Remover o indicador de foco padrão com `outline: none;` sem fornecer uma alternativa visual clara.
+- [ ] **O tamanho de alvos clicáveis (botões, links) é grande o suficiente para ser facilmente acionado (mínimo de 24x24 pixels CSS).** (Referência: NBR 17225 - Diretriz 2.5.8: Tamanho do Alvo)
+- [ ] **Botões possuem rótulos textuais claros; se apenas um ícone for usado, ele deve ter um nome acessível.** (Referência: NBR 17225 - Diretriz 4.1.2: Nome, Função, Valor)
+- [ ] **Instruções para operar controles não dependem apenas de características sensoriais (forma, localização visual).** (Referência: NBR 17225 - Diretriz 1.3.3: Características Sensoriais)
+    - > **Certo:** "Para continuar, selecione o botão 'Avançar'."
+    - > **Errado:** "Para continuar, clique no botão redondo à direita."
+- [ ] **O conteúdo que aparece em hover (ao passar o mouse) ou foco pode ser dispensado e não obscurece outro conteúdo.** (Referência: NBR 17225 - Diretriz 1.4.13: Conteúdo em Hover ou Foco)
+- [ ] **Ter cuidado com `display:none` e `visibility:hidden` para não esconder conteúdo de tecnologias assistivas indevidamente.** (Referência: NBR 17225 - Diretriz 4.1.2: Nome, Função, Valor)
 
-> <a id="RP3" href="#TEC3">3.</a> WCAG 2.2 Understanding Docs. SC 1.3.3 Sensory Characteristics (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html](https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html). Acesso em: 9 Mai. 2024.
+#### 4. Animação e Conteúdo Dinâmico
 
-> <a id="RP4" href="#TEC4">4.</a> WCAG 2.2 Understanding Docs. SC 1.4.11 Non-text Contrast (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). Acesso em: 9 Mai. 2024.
+- [ ] **Evitar conteúdo que pisque mais de três vezes por segundo.** (Referência: NBR 17225 - Diretriz 2.3.1: Três Flashes ou Abaixo do Limite)
+- [ ] **Oferecer ao usuário controles para pausar, parar ou ocultar qualquer conteúdo que se mova ou atualize automaticamente.** (Referência: NBR 17225 - Diretriz 2.2.2: Pausar, Parar, Ocultar)
+    - > **Certo:** Um carrossel de imagens que possui botões visíveis de "pausar", "anterior" e "próximo".
+    - > **Errado:** Um carrossel que gira automaticamente sem nenhuma opção para o usuário pará-lo.
+- [ ] **Animações decorativas ou não essenciais devem ser desativadas caso o usuário prefira movimento reduzido (`prefers-reduced-motion`).** (Referência: NBR 17225 - Diretriz 2.3.3: Animação de Interações)
 
-> <a id="RP5" href="#TEC5">5.</a> WCAG 2.2 Understanding Docs. SC 1.4.10 Reflow (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/reflow.html](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html). Acesso em: 9 Mai. 2024.
+---
+### Bibliografia e Referências
 
-> <a id="RP6" href="#TEC6">6.</a> WCAG 2.2 Understanding Docs. SC 2.3.1 Three Flashes or Below Threshold (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP7" href="#TEC7">7.</a> WCAG 2.2.2 Understanding Docs. SC 2.2.2 Pause, Stop, Hide (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP8" href="#TEC8">8.</a> WCAG 2.2 Understanding Docs. SC 2.3.3 Animation from Interactions (Level AAA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP9" href="#TEC9">9.</a> WCAG 2.2 Understanding Docs. SC 1.4.3 Contrast (Minimum) (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Acesso em: 9 Mai. 2024.
-
-## Bibliografia
-
-> </a> DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. Guia de Boas Práticas para Acessibilidade Digital. Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: [https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf](https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf). Acesso em: 9 Mai. 2024.
+> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225**: Acessibilidade para conteúdo web. Rio de Janeiro: ABNT, 2025.
+>
+> DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf. Acesso em: 17 jun. 2025.
+>
+> W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/. Acesso em: 17 jun. 2025.

@@ -1,131 +1,78 @@
 # Desenvolvimento
 
-"Nessa fase, é importante garantir que a equipe de desenvolvimento saiba como implementar acessibilidade, verificá-la e usar as ferramentas disponíveis no mercado para
-testes e padronizações. Também é importante que a equipe saiba como as pessoas com deficiência usam os sítios web e aplicativos". Nesse caso, foram incluídas técnicas relacionadas ao desenvolvimento e também formas de verificar.
+"Nessa fase, é importante garantir que a equipe de desenvolvimento saiba como implementar acessibilidade, verificá-la e usar as ferramentas disponíveis no mercado para testes e padronizações. Também é importante que a equipe saiba como as pessoas com deficiência usam os sítios web e aplicativos". Nesse caso, foram incluídas técnicas relacionadas ao desenvolvimento e também formas de verificar.
 
-## Imagens
-- [x] <b> Adicionar ``` alt ``` </b> para imagens, botões-imagem, gráficos e imagens de mapas com pontos de acesso. <a id="TEC1" href="#RP1">[1]</a>
-- [ ] <b> Adicionar ``` alt="" ``` </b> para imagens decorativas que não tem significado. <a id="TEC1" href="#RP1">[1]</a>
-- [ ] <b> Incluir a descrição no ``` alt ```</b> para imagens que contém texto. <a id="TEC1" href="#RP1">[1]</a>
+#### 1. Estrutura e Semântica (HTML)
+- [ ] **Usar elementos HTML nativos e semanticamente corretos para apresentar o conteúdo.** (Referência: NBR 17225 - Diretriz 1.3.1: Informações e Relações)
+- [ ] **Definir o idioma principal da página com o atributo `lang`.** (Referência: NBR 17225 - Diretriz 3.1.1: Idioma da Página)
+    - > **Certo:** `<html lang="pt-br">`
+    - > **Errado:** `<html>` (Sem o atributo de idioma)
+- [ ] **Garantir que a hierarquia de títulos (`h1` a `h6`) seja lógica e não pule níveis.** (Referência: NBR 17225 - Diretriz 2.4.6: Cabeçalhos e Rótulos)
+- [ ] **Toda página contém um único `h1` que descreve seu propósito principal.** (Referência: NBR 17225 - Diretriz 2.4.6: Cabeçalhos e Rótulos)
+- [ ] **Usar o elemento `<table>` apenas para dados tabulares, não para layout.** (Referência: NBR 17225 - Diretriz 1.3.1: Informações e Relações)
+- [ ] **Em tabelas, associar células de dados aos seus cabeçalhos com `<th>` e o atributo `scope`.** (Referência: NBR 17225 - Diretriz 1.3.1: Informações e Relações)
+    - > **Certo:** `<tr> <th scope="row">Nome</th> <td>Maria</td> </tr>`
+    - > **Errado:** `<tr> <td><b>Nome</b></td> <td>Maria</td> </tr>`
+- [ ] **Fornecer um título para tabelas com o elemento `<caption>`.** (Referência: NBR 17225 - Diretriz 1.3.1: Informações e Relações)
+- [ ] **O código-fonte é lógico e a ordem dos elementos faz sentido mesmo sem CSS.** (Referência: NBR 17225 - Diretriz 1.3.2: Sequência Significativa)
+- [ ] **Garantir que o código não tenha erros de análise (parsing) que interfiram com tecnologias assistivas.** (Referência: NBR 17225 - Diretriz 4.1.1: Análise)
+    - > **Certo:** `<h2><a href="#">Título</a></h2>`
+    - > **Errado:** `<a href="#"><h2>Título</a></h2>` (Tags aninhadas incorretamente)
 
-## Vídeos
-- [ ] <b> Adicionar legendas</b> para áudio em vídeos existentes. <a id="TEC2" href="#RP2">[2]</a>
-- [x] <b> Evitar conteúdo com <i>flashes</i> (gatilhos para convulsões)</b> ou manter abaixo dos limites. <a id="TEC3" href="#RP3">[3]</a>
+#### 2. Navegação por Teclado e Foco
+- [ ] **Todas as funcionalidades interativas estão disponíveis e são operáveis por teclado.** (Referência: NBR 17225 - Diretriz 2.1.1: Teclado)
+- [ ] **Não há "armadilhas de teclado", ou seja, o foco nunca fica preso em um componente.** (Referência: NBR 17225 - Diretriz 2.1.2: Nenhuma Armadilha para o Teclado)
+    - > **Certo:** Um modal que, ao ser aberto, permite navegar por todos os seus elementos e pode ser fechado com a tecla `Esc`, devolvendo o foco para o item que o abriu.
+    - > **Errado:** Um modal que, ao ser aberto, não permite que o usuário saia dele usando a tecla `Tab` ou `Esc`, ficando preso.
+- [ ] **A ordem de navegação com a tecla `Tab` é lógica e intuitiva.** (Referência: NBR 17225 - Diretriz 2.4.3: Ordem do Foco)
+- [ ] **O indicador de foco do teclado é sempre visível e com bom contraste.** (Referência: NBR 17225 - Diretriz 2.4.7: Foco Visível)
+- [ ] **Elementos que recebem foco não devem ficar obscurecidos por outros elementos (ex: banners, menus fixos).** (Referência: NBR 17225 - Diretriz 2.4.11: Foco Não Obscurecido (Mínimo))
+- [ ] **Fornecer um link no início da página para "pular" blocos de navegação e ir direto ao conteúdo principal (skip link).** (Referência: NBR 17225 - Diretriz 2.4.1: Ignorar Blocos)
+    - > **Certo:** `<a href="#conteudo" class="skip-link">Pular para o conteúdo</a> ... <main id="conteudo">...</main>`
+- [ ] **Oferecer atalhos de teclado (accesskey), se aplicável, e informar o usuário sobre eles.** (Referência: NBR 17225 - Diretriz 2.1.4: Atalhos de Caractere)
 
-## Controles
-- [x] <b> Adicionar ``` href ```</b> para links. <a id="TEC4" href="#RP4">[4]</a>
-- [x] <b> Adicionar underline</b> nos links. <a id="TEC5" href="#RP5">[5]</a>
-- [x] <b> Adicionar estados de foco</b> em campos de entrada, botões, e elementos interativos. <a id="TEC6" href="#RP6">[6]</a>
-- [x] <b> Adicionar ```type="button"```</b> nos botões. <a id="TEC4" href="#RP4">[4]</a>
-- [x] <b> Adicionar skip-link </b> (link para pular) para o conteúdo principal. <a id="TEC7" href="#RP7">[7]</a>
-- [x] <b> Identifique e comunique </b> links que abrem em uma nova guia ou janela. <a id="TEC8" href="#RP8">[8]</a>
+#### 3. Formulários e Controles
+- [ ] **Todos os campos de formulário (`input`, `textarea`, `select`) têm um rótulo (`<label>`) associado via `for`/`id`.** (Referência: NBR 17225 - Diretriz 3.3.2: Rótulos ou Instruções)
+    - > **Certo:** `<label for="nome">Nome:</label> <input type="text" id="nome">`
+    - > **Errado:** `Nome: <input type="text">`
+- [ ] **Agrupar campos de formulário relacionados (ex: checkboxes, radio buttons) com `<fieldset>` e `<legend>`.** (Referência: NBR 17225 - Diretriz 1.3.1: Informações e Relações)
+- [ ] **Usar o atributo `autocomplete` para campos que solicitam informações do usuário (nome, endereço, etc.).** (Referência: NBR 17225 - Diretriz 1.3.5: Identificar a Finalidade da Entrada)
+- [ ] **Erros de validação são identificados de forma clara, em texto, e o foco é movido para o campo com erro.** (Referência: NBR 17225 - Diretriz 3.3.1: Identificação de Erro)
+- [ ] **Usar `aria-describedby` para associar campos de entrada a instruções ou mensagens de erro específicas.** (Referência: NBR 17225 - Diretriz 3.3.1: Identificação de Erro)
+    - > **Certo:** `<input id="senha" type="password" aria-describedby="req_senha"> <p id="req_senha">A senha deve ter 8 caracteres.</p>`
+- [ ] **Garantir que links sejam identificáveis (com `href`) e que o texto do link descreva seu destino.** (Referência: NBR 17225 - Diretriz 2.4.4: Finalidade do Link (Em Contexto))
+- [ ] **Botões são implementados com o elemento `<button>` ou `input type="button"` e seu propósito é claro.** (Referência: NBR 17225 - Diretriz 4.1.2: Nome, Função, Valor)
 
-## Formulário
-- [x] <b> Adicionar ``` label ```</b> para os campos de entradas associadas ao elemento correspondente. <a id="TEC9" href="#RP9">[9]</a>
-- [ ] <b> Adicionar ``` <fildset> ``` e ``` <legend> ```</b> para seção no formulário. <a id="TEC4" href="#RP4">[4]</a>
-- [x] <b> Adicionar ``` autocomplete ```</b> para campos de entrada. <a id="TEC10" href="#RP10">[10]</a>
-- [ ] <b> Exibir ``` errors ``` </b> (erros) de entrada acima do formulário, após envio. <a id="TEC11" href="#RP11">[11]</a>
-- [x] <b> Adicionar ``` aria-describedby ```</b> para os campos de entrada. <a id="TEC11" href="#RP11">[11]</a>
-- [ ] <b> Exibir mensagens de erro e sucesso</b> não só visualmente. <a id="TEC5" href="#RP5">[5]</a>
+#### 4. Imagens, Mídia e Conteúdo Dinâmico
+- [ ] **Fornecer texto alternativo (`alt`) descritivo para todo conteúdo não textual (imagens, gráficos).** (Referência: NBR 17225 - Diretriz 1.1.1: Conteúdo não textual)
+    - > **Certo:** `<img src="grafico.png" alt="Gráfico de pizza mostrando 70% de aprovação.">`
+    - > **Errado:** `<img src="grafico.png" alt="Imagem">`
+- [ ] **Usar `alt=""` para imagens puramente decorativas, para que sejam ignoradas.** (Referência: NBR 17225 - Diretriz 1.1.1: Conteúdo não textual)
+- [ ] **Fornecer legendas e transcrições para conteúdo de áudio e vídeo.** (Referência: NBR 17225 - Diretriz 1.2: Mídia Baseada em Tempo)
+- [ ] **Evitar conteúdo que pisque mais de três vezes por segundo.** (Referência: NBR 17225 - Diretriz 2.3.1: Três Flashes ou Abaixo do Limite)
+- [ ] **Áudio que toca automaticamente por mais de 3 segundos pode ser pausado ou ter seu volume alterado.** (Referência: NBR 17225 - Diretriz 1.4.2: Controle de Áudio)
+- [ ] **Fornecer controles para pausar, parar ou ocultar qualquer conteúdo em movimento (carrosséis, animações).** (Referência: NBR 17225 - Diretriz 2.2.2: Pausar, Parar, Ocultar)
 
-## Mídia
-- [x] <b> Impedir ``` autoplay ```</b> para vídeos e audios. <a id="TEC12" href="#RP12">[12]</a>
-- [ ] <b> Adicionar ``` type ```</b> para botões e entradas. <a id="TEC4" href="#RP4">[4]</a>
-- [x] <b> Adicionar pausa </b> para todas as mídias. <a id="TEC13" href="#RP13">[13]</a>
-- [x] <b> Adicionar transcrição </b> para audios. <a id="TEC1" href="#RP1">[1]</a>
+#### 5. ARIA e Interatividade (Modais, etc.)
+- [ ] **Usar atributos ARIA (Accessible Rich Internet Applications) apenas quando o HTML semântico não for suficiente.** (Referência: NBR 17225 - Diretriz 4.1.2: Nome, Função, Valor)
+- [ ] **Modais e pop-ups podem ser fechados com a tecla `Esc` e o foco retorna ao elemento que o acionou.** (Referência: NBR 17225 - Diretriz 2.1.2: Nenhuma Armadilha para o Teclado)
+- [ ] **Mensagens de status e atualizações de conteúdo são comunicadas a tecnologias assistivas (ex: usando `aria-live`).** (Referência: NBR 17225 - Diretriz 4.1.3: Mensagens de Status)
+    - > **Certo:** `<div id="alerta" role="alert" aria-live="polite">Item adicionado ao carrinho!</div>` (O leitor de tela anunciará a mensagem sem mover o foco).
+- [ ] **Avisar o usuário quando um link abrir em uma nova janela ou aba.** (Referência: NBR 17225 - Diretriz 3.2.2: Na Entrada)
+    - > **Certo:** `<a href="#" target="_blank">Relatório Anual (abre em nova janela)</a>`
 
-## Semântica
-- [x] Uso de elementos <b>nativos HTML</b>. 
-- [x] Fluxo continuo e <b>Lógico</b>. 
-- [x] Tem <b>descrições</b> que podem ser <b>facilmente compreendidas</b>. 
-- [x] Tem a <b>semântica correta</b>. 
-- [x] É <b>objetivo</b> nos <b>rótulos</b>. 
+#### 6. Design Responsivo e Mobile
+- [ ] **O conteúdo flui em uma única coluna sem rolagem horizontal em telas pequenas (Refluxo).** (Referência: NBR 17225 - Diretriz 1.4.10: Refluxo)
+- [ ] **A orientação do dispositivo (retrato ou paisagem) não impede a visualização ou operação do conteúdo.** (Referência: NBR 17225 - Diretriz 1.3.4: Orientação)
+- [ ] **O tamanho dos alvos de toque (botões, links) é de no mínimo 24x24 pixels CSS.** (Referência: NBR 17225 - Diretriz 2.5.8: Tamanho do Alvo)
+- [ ] **O zoom do navegador não é desabilitado.** (Referência: NBR 17225 - Diretriz 1.4.4: Redimensionamento de Texto)
+    - > **Errado:** `<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">`
 
-## Texto
-- [ ] <b>Evitar</b> o uso de <b>textos dentro de imagens</b>. 
-- [x] <b>Redimensiona os textos na página</b>, aumentando o zoom em até 200%. 
-- [x] <b>Alturas </b> das fontes <b> não é fixa </b>. 
+---
+### Bibliografia e Referências
 
-## Teclado
-- [ ] <b> Funcionalidades </b> da página web estão <b> disponíveis por teclado </b>. 
-- [ ] Quando se tem o <b>mouseover é permitido o uso de teclado </b>. 
-- [ ] <b>Foco visível</b> remova elementos focalizáveis ​​invisíveis. 
-- [ ] Adicione o <b> ``` .hover, .focus { } ```</b>  para tornar o foco visível. 
-- [ ] Permite/visa o uso de <b> Atalhos de teclado </b> como o ```TAB```. 
-- [ ] <b> Primeiro </b> item interativo da página é um link para o <b> conteúdo principal </b>. 
-
-## Título
-- [ ] A <b>hierarquia</b> de conteúdo da página é definida por sua <b>lógica</b> não pelo tamanaho do texto. <a id="TEC17" href="#RP17">[17]</a>
-- [ ] Use <b>elementos de título  ``` h1 h2 h3 ```</b> para apresentar o conteúdo.<a id="TEC17" href="#RP17">[17]</a>
-- [ ] <b>Não pular níveis lógicos</b>.
-- [ ] <b>Toda página contem um título  ``` h1 ```</b> descrevendo a página. <a id="TEC17" href="#RP17">[17]</a></b><a id="TEC19" href="#RP19">[19]</a>
-
-## Tabela
-- [ ] <b> Use o ``` table ``` </b> para elementos em formato de tabela.  <a id="TEC4" href="#RP4">[4]</a>
-- [ ] Insira cabeçalhos para explicar os dados, <b>use ``` th ``` com  ``` scope ``` correto</b>.<a id="TEC15" href="#RP15">[15]</a>
-- [ ] <b> Use o ``` captione ``` </b> lemento para fornecer um título para a tabela.<a id="TEC17" href="#RP17">[17]</a>
-
-## Modais
-- [ ] Deve ser <b> fácil fechar </b>.<a id="TEC19" href="#RP19">[19]</a>
-- [ ] Permiti o <b> uso da tecla escape ``` ESC ```</b>.</b><a id="TEC19" href="#RP19">[19]</a>
-- [ ] A interação é  uma <b> tarefa simples</b>.</b><a id="TEC19" href="#RP19">[19]</a>
-- [ ] <b> Evita </b> modais em <b> tela cheia </b>.</b><a id="TEC19" href="#RP19">[19]</a>
-- [ ] <b> Não abrir um modal a partir de outro modal </b>.</b><a id="TEC19" href="#RP19">[19]</a>
-
-## Dispositivo Móvel e tocável
-- [ ] O site pode ser <b> rotacionado </b> para qualquer orientação.  <a id="TEC15" href="#RP15">[15]</a>
-- [ ] <b> Impedir </b> rolgem horizontal. <a id="TEC16" href="#RP15">[16]</a>
-- [ ] <b> Garantir </b> que botões e links possam ser ativados facilmente. <a id="TEC18" href="#RP18">[18]</a>
-- [ ] <b> Garantir </b> espaço suficiente entre elementos interativos. <a id="TEC7" href="#RP7">[7]</a>
-
-## Ferramentas e extras
-- [ ] Permiti <b> pausar, parar ou ocultar conteúdo em movimento </b>.
-- [ ] Usar <b> Breadcrumbs </b> informando a localização atual nas páginas.
-- [ ] Colocar página ou <b> área de esclarecimento de dúvidas e dicas de acessibilidade </b>.
-- [ ] Áreas clicáveis com no mínimo <b> 44px (pixels) de altura e 44px de largura </b>.
-- [ ] No caso de <b>captcha</b> garanta que seja simples de entender e tenha alternativas para pessoas com deficiência.
-- [ ] Incluir um <b> campo de busca </b>.
-
-## Referência Bibliográfica
-
-> <a id="RP1" href="#TEC1">1.</a> WCAG 2.2 Understanding Docs. SC 1.1.1 Non-text Content (Level A) . Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP2" href="#TEC2">2.</a> WCAG 2.2 Understanding Docs. SC 1.2.2 Captions (Prerecorded) (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html](https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP3" href="#TEC3">3.</a> WCAG 2.2 Understanding Docs. SC 2.3.1 Three Flashes or Below Threshold (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP4" href="#TEC4">4.</a> WCAG 2.2 Understanding Docs. SC 1.3.1 Info and Relationships (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP5" href="#TEC5">5.</a> WCAG 2.2 Understanding Docs. SC 1.4.1 Use of Color (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP6" href="#TEC6">6.</a> WCAG 2.2 Understanding Docs. SC 2.4.7 Focus Visible (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP7" href="#TEC7">7.</a> WCAG 2.2 Understanding Docs. SC 2.4.1 Bypass Blocks (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html](https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP8" href="#TEC8">8.</a> WCAG 2.2 Understanding Docs. G201 Giving users advanced warning when opening a new window. Disponível em: [https://www.w3.org/WAI/WCAG22/Techniques/general/G201](https://www.w3.org/WAI/WCAG22/Techniques/general/G201). Acesso em: 9 Mai. 2024.
-
-> <a id="RP9" href="#TEC9">9.</a> WCAG 2.2 Understanding Docs. SC 3.2.2 On Input (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/on-input.html](https://www.w3.org/WAI/WCAG22/Understanding/on-input.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP10" href="#TEC10">10.</a> WCAG 2.2 Understanding Docs. SC 1.3.5 Identify Input Purpose (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP11" href="#TEC11">11.</a> WCAG 2.2 Understanding Docs. SC 3.3.1 Error Identification (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html](https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP12" href="#TEC12">12.</a> WCAG 2.2 Understanding Docs. SC 1.4.2 Audio Control (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html](https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP13" href="#TEC13">13.</a> WCAG 2.2 Understanding Docs. SC 2.1.1 Keyboard (Level A). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP14" href="#TEC14">14.</a> WCAG 2.2 Understanding Docs. SC 1.3.4 Orientation (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/orientation.html](https://www.w3.org/WAI/WCAG22/Understanding/orientation.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP15" href="#TEC15">15.</a> WCAG 2.2 Understanding Docs. SC 4.1.1 Orientation (Level). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/parsing.html](https://www.w3.org/WAI/WCAG22/Understanding/parsing.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP16" href="#TEC16">16.</a> WCAG 2.2 Understanding Docs. SC 1.4.10 Reflow (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/reflow.html](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP17" href="#TEC17">17.</a> WCAG 2.2 Understanding SC 2.4.6 Headings and Labels (Level AA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html](https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP18" href="#TEC18">18.</a> WCAG 2.2 Understanding Docs. SC 2.5.5 Target Size (Enhanced) (Level AAA). Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html). Acesso em: 9 Mai. 2024.
-
-> <a id="RP19" href="#TEC19">19.</a> GUIA DE BOAS PRÁTICAS PARA ACESSIBILIDADE DIGITAL. Disponível em: [https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html](https://www.w3.org/WAI/WCAG22/Understandin/target-size-enhanced.html). Acesso em: 9 Mai. 2024.
-
-## Bibliografia
-
-> </a> DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. Guia de Boas Práticas para Acessibilidade Digital. Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: [https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf](https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf). Acesso em: 9 Mai. 2024.
+> ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225**: Acessibilidade para conteúdo web. Rio de Janeiro: ABNT, 2025.
+>
+> DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf. Acesso em: 17 jun. 2025.
+>
+> W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/. Acesso em: 17 jun. 2025.
