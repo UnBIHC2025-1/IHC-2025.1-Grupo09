@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+	--font-poppins: Poppins, sans-serif;
+	--color-white-005: rgba(255, 255, 255, 0.05);
+}
+
+:root {
+	--background: #151312;
+	--foreground: #ededed;
+	--color-white-005: rgba(255, 255, 255, 0.05);
+}
+
+.dark {
+	--background: #151312;
+	--foreground: #ededed;
+	--color-white-005: rgba(255, 255, 255, 0.05);
+}
+
+.light {
+	--background: #f2ebf4;
+	--foreground: #2d2d2d;
+	--color-white-005: rgba(0, 0, 0, 0.05);
+	--color-pink-400: rgb(141, 59, 199);
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Poppins, Helvetica, sans-serif;
+}
+
+.blinking-cursor {
+	animation: blink 1s step-start infinite;
+}
