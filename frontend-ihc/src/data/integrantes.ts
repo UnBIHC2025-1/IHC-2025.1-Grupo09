@@ -34,7 +34,7 @@ export const integrantes: Integrante[] = [
   {
     name: "Kauan José",
     description:
-      "Durante a disciplina atuei como lider do grupo. Pude aprender bastante como que o meu desenvolvimento de software pode ser aprimorado levando em consideração a acessibilidade e usabilidade do sistema.",
+      "Durante a disciplina de Interação Humano-Computador, aprendi a desenvolver sistemas mais acessíveis e intuitivos. Percebi como a usabilidade e a experiência do usuário são cruciais para o sucesso de qualquer software, e como pequenos detalhes podem fazer uma grande diferença na forma como as pessoas interagem com a tecnologia.",
     github_link: "https://github.com/kauan2872",
     slug: "segmentation-tool",
     image: "https://avatars.githubusercontent.com/u/103394028?v=4",
