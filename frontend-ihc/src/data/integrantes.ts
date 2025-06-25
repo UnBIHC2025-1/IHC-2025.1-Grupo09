@@ -18,7 +18,7 @@ export const integrantes: Integrante[] = [
   {
     name: "Atyrson Souto",
     description:
-      "Durante a disciplina atuei como lider do grupo. Pude aprender bastante como que o meu desenvolvimento de software pode ser aprimorado levando em consideração a acessibilidade e usabilidade do sistema.",
+      "Por meio da disciplina de IHC pude aprender como a experiência de desenvolvimento pode se tornar muito mais enriquecedora quando levamos em consideração às questões de acessibilidade, além de expandir a minha capacidade de me enxergar como um usuário da solução.",
     github_link: "#",
     slug: "atyrson-souto",
     image: "https://avatars.githubusercontent.com/u/63325517?v=4",
