@@ -26,8 +26,8 @@ export const integrantes: Integrante[] = [
   {
     name: "Kauan Felipe",
     description:
-      "Durante a disciplina atuei como lider do grupo. Pude aprender bastante como que o meu desenvolvimento de software pode ser aprimorado levando em consideração a acessibilidade e usabilidade do sistema.",
-    github_link: "#",
+      "Durante a disciplina, aprendi muito sobre a importância da acessibilidade digital e como ela é fundamental para garantir a inclusão de todas as pessoas no uso de tecnologias. Compreendi que pensar na acessibilidade desde o planejamento da usabilidade é essencial para criar soluções mais justas e eficientes. Além disso, pude aperfeiçoar minha capacidade de trabalhar em equipe, desenvolvendo trabalhos colaborativos e entendendo a importância da troca de conhecimentos e da cooperação no desenvolvimento.",
+    github_link: "https://github.com/Kauan-F20",
     slug: "kauan-felipe",
     image: "https://avatars.githubusercontent.com/u/184998416?v=4",
   },
