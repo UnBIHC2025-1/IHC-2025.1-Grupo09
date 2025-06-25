@@ -24,7 +24,7 @@ export default function Home() {
               <span className="text-pink-400 opacity-50">
                 <br />
                 <TypewriterEffect
-                  texts={["INTERAÇÃO", "HUMANO", "COMPUTADOR"]}
+                  texts={["INTERAÇÃO", "HUMANO", "IHC"]}
                   speed={250}
                   deleteSpeed={250}
                 />{" "}
