@@ -24,7 +24,7 @@ nav:
   - Ferramentas:
     - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
     
-   - Desafios: 'desafios.md'
+  - Desafios: 'desafios.md'
 
 theme:
   name: material # Alterado de readthedocs para material
