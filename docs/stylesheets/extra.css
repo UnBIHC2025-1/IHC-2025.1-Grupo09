@@ -70,3 +70,44 @@
 .desafio-notificacao .close-btn:hover {
   color: #333;
 }
+
+#progress-container {
+  position: fixed;
+  top: 80px; /* Abaixo do header */
+  right: 20px;
+  z-index: 100;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#progress-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Começa o círculo no topo */
+}
+
+.progress-bg,
+.progress-bar {
+  fill: none;
+  stroke-width: 10; /* Espessura do círculo */
+}
+
+.progress-bg {
+  stroke: #e0e0e0; /* Cor do fundo do círculo (cinza claro) */
+}
+
+.progress-bar {
+  stroke: #005fcc; /* Cor do progresso (azul do tema) */
+  stroke-linecap: round; /* Pontas arredondadas */
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+#progress-text {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}

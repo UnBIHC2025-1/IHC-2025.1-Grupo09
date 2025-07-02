@@ -54,3 +54,4 @@ extra_css:
 
 extra_javascript:
   - js/notificacao-desafio.js
+  - js/progress-circle.js
