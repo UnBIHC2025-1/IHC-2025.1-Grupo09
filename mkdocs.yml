@@ -24,14 +24,14 @@ nav:
   - Ferramentas:
     - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
     
-   - Desafios: desafios.md
+   - Desafios: 'desafios.md'
 
 theme:
   name: material # Alterado de readthedocs para material
   locale: pt_BR
-  logo: imagens/logo-verificaaa.png # Verifique o caminho correto da sua imagem
-  favicon: imagens/logo-verificaaa.png # Verifique o caminho correto da sua imagem
-  features: # Adicione recursos do tema Material para uma melhor experiência
+  logo: imagens/logo-verificaaa.png
+  favicon: imagens/logo-verificaaa.png
+  features:
     - navigation.tabs
     - navigation.sections
     - search.highlight
