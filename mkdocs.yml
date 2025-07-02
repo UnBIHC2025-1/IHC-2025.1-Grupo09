@@ -23,8 +23,8 @@ nav:
 
   - Ferramentas:
     - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
-    
-   - Desafios: desafios.md
+
+   - Desafios: 'desafios.md
 
 theme:
   name: material # Alterado de readthedocs para material
@@ -51,3 +51,6 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - js/notificacao-desafio.js
