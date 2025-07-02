@@ -1,3 +1,17 @@
-.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
-    width: 50% !important;
+.wy-side-nav-search .wy-dropdown > a img.logo,
+.wy-side-nav-search > a img.logo {
+  width: 50% !important;
+}
+
+.desafio-box {
+  background-color: #f0f8ff; /* Um azul bem clarinho */
+  border-left: 5px solid #005fcc; /* Borda azul escura */
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.desafio-box h2 {
+  margin-top: 0;
+  color: #005fcc;
 }
