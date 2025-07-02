@@ -5,4 +5,4 @@ A cada semana, um novo desafio será apresentado aqui para ajudar você a coloca
 <div id="desafio-semanal" class="desafio-box">
   </div>
 
-<script src="../js/desafios.js"></script>
+<script src="js/desafios.js"></script>
