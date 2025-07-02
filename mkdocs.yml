@@ -7,31 +7,31 @@ site_name: VerificAAA
 use_directory_urls: False
 
 nav:
-  - Início - VerificAAA: 'index.md'
+  - Início - VerificAAA: "index.md"
 
   - Desenvolvimento Web:
-    - Desenvolvimento: 'devWeb/non_text_content.md'
+      - Desenvolvimento: "devWeb/non_text_content.md"
 
   - Design:
-    - Design: 'design/design.md'
-  
+      - Design: "design/design.md"
+
   - Geração de Conteúdo:
-    - Conteúdo: 'geracaoConteudo/conteudo.md'
+      - Conteúdo: "geracaoConteudo/conteudo.md"
 
   - Gestão de Projetos:
-    - Gestão de Projetos: 'gestaoProjeto/gestaoProjeto.md'
+      - Gestão de Projetos: "gestaoProjeto/gestaoProjeto.md"
 
   - Ferramentas:
-    - Ferramentas de Acessibilidade: 'tools/ferramentas.md'
+      - Ferramentas de Acessibilidade: "tools/ferramentas.md"
 
-   - Desafios: 'desafios.md
+  - Desafios: "desafios.md"
 
 theme:
   name: material # Alterado de readthedocs para material
   locale: pt_BR
-  logo: imagens/logo-verificaaa.png # Verifique o caminho correto da sua imagem
-  favicon: imagens/logo-verificaaa.png # Verifique o caminho correto da sua imagem
-  features: # Adicione recursos do tema Material para uma melhor experiência
+  logo: imagens/logo-verificaaa.png
+  favicon: imagens/logo-verificaaa.png
+  features:
     - navigation.tabs
     - navigation.sections
     - search.highlight
