@@ -72,42 +72,76 @@
 }
 
 #progress-container {
-  position: fixed;
-  top: 80px; /* Abaixo do header */
-  right: 20px;
-  z-index: 100;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 100;
+    
+    /* ESTILO DE NOTIFICAÇÃO / TOAST */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px;
+    width: 200px;
+    
+    /* Layout interno para alinhar o título e o círculo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /* Lógica para esconder/mostrar e evitar o "pisca-pisca" */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+/* Classe que o JS adiciona para mostrar a notificação */
+#progress-container.visivel {
+    visibility: visible;
+    opacity: 1;
+}
+
+#progress-title {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+#progress-svg-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #progress-svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg); /* Começa o círculo no topo */
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
 }
 
-.progress-bg,
-.progress-bar {
-  fill: none;
-  stroke-width: 10; /* Espessura do círculo */
+.progress-bg, .progress-bar {
+    fill: none;
+    stroke-width: 10;
 }
 
 .progress-bg {
-  stroke: #e0e0e0; /* Cor do fundo do círculo (cinza claro) */
+    stroke: #e0e0e0;
 }
 
 .progress-bar {
-  stroke: #005fcc; /* Cor do progresso (azul do tema) */
-  stroke-linecap: round; /* Pontas arredondadas */
-  transition: stroke-dashoffset 0.5s ease;
+    stroke: #005fcc; /* Cor do progresso */
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
 }
 
 #progress-text {
-  position: absolute;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
