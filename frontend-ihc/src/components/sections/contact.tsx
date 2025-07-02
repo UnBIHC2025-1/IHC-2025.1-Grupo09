@@ -65,7 +65,7 @@ function Contact() {
                 name="name"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Nome</FormLabel>
+                    <FormLabel>Nome *Obrigatório</FormLabel>
                     <FormControl>
                       <Input placeholder="Seu nome" {...field} />
                     </FormControl>
@@ -78,7 +78,7 @@ function Contact() {
                 name="email"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>Email  *Obrigatório</FormLabel>
                     <FormControl>
                       <Input placeholder="seu@email.com" {...field} />
                     </FormControl>
@@ -93,7 +93,7 @@ function Contact() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Mensagem</FormLabel>
+                  <FormLabel>Mensagem  *Obrigatório</FormLabel>
                   <FormControl>
                     <Input className="h-40" {...field} />
                   </FormControl>
