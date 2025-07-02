@@ -1,42 +1,56 @@
 window.addEventListener("load", function () {
-    // SELETOR CORRIGIDO: Procura por qualquer input do tipo checkbox
-    // que esteja dentro de um item de lista da classe 'task-list-item'.
-    const allCheckboxes = document.querySelectorAll("li.task-list-item input[type=checkbox]");
-    const container = document.getElementById('progress-container');
-    
-    // Se não houver checkboxes na página, o script para aqui.
-    if (allCheckboxes.length === 0) {
-        return;
-    }
+  const allCheckboxes = document.querySelectorAll(
+    "li.task-list-item input[type=checkbox]"
+  );
+  const container = document.getElementById("progress-container");
 
-    // Se encontramos checkboxes, tornamos o container visível.
-    if (container) {
-        container.classList.add('visivel');
-    }
+  if (allCheckboxes.length === 0) {
+    return;
+  }
 
-    const progressBar = document.getElementById("progress-bar");
-    const progressText = document.getElementById("progress-text");
-    const radius = progressBar.r.baseVal.value;
-    const circumference = 2 * Math.PI * radius;
+  if (container) {
+    container.classList.add("visivel");
+  }
 
-    progressBar.style.strokeDasharray = `${circumference} ${circumference}`;
-    
-    function updateProgress() {
-        // SELETOR CORRIGIDO para os itens marcados
-        const checkedCount = document.querySelectorAll("li.task-list-item input[type=checkbox]:checked").length;
-        const totalCount = allCheckboxes.length;
-        
-        progressText.textContent = `${checkedCount}/${totalCount}`;
+  // --- LÓGICA DE RECOLHER/EXPANDIR ---
+  const header = document.getElementById("progress-header");
 
-        const percent = totalCount > 0 ? (checkedCount / totalCount) : 0;
-        const offset = circumference - percent * circumference;
-        
-        progressBar.style.strokeDashoffset = offset;
-    }
+  // 1. Verifica no localStorage se o usuário já deixou a caixa recolhida
+  if (localStorage.getItem("progressCollapsed") === "true") {
+    container.classList.add("is-collapsed");
+  }
 
-    allCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", updateProgress);
-    });
+  // 2. Adiciona o evento de clique no cabeçalho
+  header.addEventListener("click", () => {
+    const isCollapsed = container.classList.toggle("is-collapsed");
+    // 3. Salva o estado (aberto/fechado) no localStorage
+    localStorage.setItem("progressCollapsed", isCollapsed);
+  });
+  // --- FIM DA LÓGICA DE RECOLHER ---
 
-    updateProgress();
+  // --- LÓGICA DO CÍRCULO (continua a mesma) ---
+  const progressBar = document.getElementById("progress-bar");
+  const progressText = document.getElementById("progress-text");
+  const radius = progressBar.r.baseVal.value;
+  const circumference = 2 * Math.PI * radius;
+
+  progressBar.style.strokeDasharray = `${circumference} ${circumference}`;
+
+  function updateProgress() {
+    const checkedCount = document.querySelectorAll(
+      "li.task-list-item input[type=checkbox]:checked"
+    ).length;
+    const totalCount = allCheckboxes.length;
+
+    progressText.textContent = `${checkedCount}/${totalCount}`;
+    const percent = totalCount > 0 ? checkedCount / totalCount : 0;
+    const offset = circumference - percent * circumference;
+    progressBar.style.strokeDashoffset = offset;
+  }
+
+  allCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", updateProgress);
+  });
+
+  updateProgress();
 });

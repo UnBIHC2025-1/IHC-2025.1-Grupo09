@@ -1,15 +1,23 @@
-{% extends "base.html" %}
-
-{% block content %}
-  <div id="progress-container">
+{% extends "base.html" %} {% block content %}
+<div id="progress-container">
+  <div id="progress-header">
     <h3 id="progress-title">Progresso na Página</h3>
+    <span id="progress-toggle-icon">▼</span>
+  </div>
+  <div id="progress-body">
     <div id="progress-svg-wrapper">
       <svg id="progress-svg" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="45" class="progress-bg"></circle>
-        <circle cx="50" cy="50" r="45" class="progress-bar" id="progress-bar"></circle>
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          class="progress-bar"
+          id="progress-bar"
+        ></circle>
       </svg>
       <div id="progress-text">0/0</div>
     </div>
   </div>
-  {{ super() }}
-{% endblock %}
+</div>
+{{ super() }} {% endblock %}
