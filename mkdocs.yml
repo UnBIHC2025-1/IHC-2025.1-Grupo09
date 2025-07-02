@@ -31,6 +31,7 @@ theme:
   locale: pt_BR
   logo: imagens/logo-verificaaa.png
   favicon: imagens/logo-verificaaa.png
+  custom_dir: overrides
   features:
     - navigation.tabs
     - navigation.sections
